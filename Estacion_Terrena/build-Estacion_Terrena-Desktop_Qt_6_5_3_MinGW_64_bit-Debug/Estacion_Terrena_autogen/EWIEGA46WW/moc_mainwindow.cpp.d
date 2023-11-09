@@ -1,5 +1,7 @@
 D:/Mission_CERO_Electronics/Estacion_Terrena/build-Estacion_Terrena-Desktop_Qt_6_5_3_MinGW_64_bit-Debug/Estacion_Terrena_autogen/EWIEGA46WW/moc_mainwindow.cpp: D:/Mission_CERO_Electronics/Estacion_Terrena/Estacion_Terrena/mainwindow.h \
   D:/Mission_CERO_Electronics/Estacion_Terrena/build-Estacion_Terrena-Desktop_Qt_6_5_3_MinGW_64_bit-Debug/Estacion_Terrena_autogen/moc_predefs.h \
+  C:/Qt/6.5.3/mingw_64/include/QtCore/QDebug \
+  C:/Qt/6.5.3/mingw_64/include/QtCore/QObject \
   C:/Qt/6.5.3/mingw_64/include/QtCore/q20memory.h \
   C:/Qt/6.5.3/mingw_64/include/QtCore/q20type_traits.h \
   C:/Qt/6.5.3/mingw_64/include/QtCore/qalgorithms.h \
@@ -39,6 +41,7 @@ D:/Mission_CERO_Electronics/Estacion_Terrena/build-Estacion_Terrena-Desktop_Qt_6
   C:/Qt/6.5.3/mingw_64/include/QtCore/qglobalstatic.h \
   C:/Qt/6.5.3/mingw_64/include/QtCore/qhash.h \
   C:/Qt/6.5.3/mingw_64/include/QtCore/qhashfunctions.h \
+  C:/Qt/6.5.3/mingw_64/include/QtCore/qiodevice.h \
   C:/Qt/6.5.3/mingw_64/include/QtCore/qiodevicebase.h \
   C:/Qt/6.5.3/mingw_64/include/QtCore/qiterable.h \
   C:/Qt/6.5.3/mingw_64/include/QtCore/qiterator.h \
@@ -133,6 +136,12 @@ D:/Mission_CERO_Electronics/Estacion_Terrena/build-Estacion_Terrena-Desktop_Qt_6
   C:/Qt/6.5.3/mingw_64/include/QtGui/qtransform.h \
   C:/Qt/6.5.3/mingw_64/include/QtGui/qwindowdefs.h \
   C:/Qt/6.5.3/mingw_64/include/QtGui/qwindowdefs_win.h \
+  C:/Qt/6.5.3/mingw_64/include/QtSerialPort/QSerialPort \
+  C:/Qt/6.5.3/mingw_64/include/QtSerialPort/QSerialPortInfo \
+  C:/Qt/6.5.3/mingw_64/include/QtSerialPort/qserialport.h \
+  C:/Qt/6.5.3/mingw_64/include/QtSerialPort/qserialportglobal.h \
+  C:/Qt/6.5.3/mingw_64/include/QtSerialPort/qserialportinfo.h \
+  C:/Qt/6.5.3/mingw_64/include/QtSerialPort/qtserialportexports.h \
   C:/Qt/6.5.3/mingw_64/include/QtWidgets/QDialog \
   C:/Qt/6.5.3/mingw_64/include/QtWidgets/QMainWindow \
   C:/Qt/6.5.3/mingw_64/include/QtWidgets/qdialog.h \
@@ -341,4 +350,5 @@ D:/Mission_CERO_Electronics/Estacion_Terrena/build-Estacion_Terrena-Desktop_Qt_6
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/time.h \
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/vadefs.h \
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wchar.h \
-  D:/Mission_CERO_Electronics/Estacion_Terrena/Estacion_Terrena/dialogconnectmicrocontroller.h
+  D:/Mission_CERO_Electronics/Estacion_Terrena/Estacion_Terrena/dialogconnectmicrocontroller.h \
+  D:/Mission_CERO_Electronics/Estacion_Terrena/Estacion_Terrena/serialmanagement.h

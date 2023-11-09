@@ -54,7 +54,7 @@ void SerialManagement::microcontrollerInit(QString port_description)    //Inicia
     micro_controller-> setFlowControl(QSerialPort::NoFlowControl);
     micro_controller-> open(QIODevice::ReadWrite);
 
-    connect(micro_controller, SIGNAL(readyRead()),this,SLOT(serial_read())); //Conecta la señal de que llega un dato por el serial con el slot de leer el dato
+    connect(micro_controller, SIGNAL(readyRead()),this,SLOT(serialRead())); //Conecta la señal de que llega un dato por el serial con el slot de leer el dato
 
     if (micro_controller->isOpen()){ //Si se pudo conectar con el microcontrolador, especifica el mensaje
         qDebug() << "Coneción con" << port_description<<" exitosa";
@@ -134,4 +134,5 @@ void SerialManagement::sendData(QString data) //Para enviar datos al arduino
 
 void SerialManagement::test() // Para porbar cosas
 {
+    qDebug("Entro");
 }

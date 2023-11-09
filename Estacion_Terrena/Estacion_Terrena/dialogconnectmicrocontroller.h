@@ -2,6 +2,7 @@
 #define DIALOGCONNECTMICROCONTROLLER_H
 
 #include <QDialog>
+#include "serialmanagement.h"
 
 namespace Ui {
 class DialogConnectMicrocontroller;
@@ -15,8 +16,19 @@ public:
     explicit DialogConnectMicrocontroller(QWidget *parent = nullptr);
     ~DialogConnectMicrocontroller();
 
+    SerialManagement* serial_obj;
+
+private slots:
+    void on_btn_search_microcontrollers_clicked();
+
+    void on_cb_microcontrollers_names_activated(int index);
+
 private:
     Ui::DialogConnectMicrocontroller *ui;
+
+signals:
+    void microcontrollerConnectionStatus(bool status);
+
 };
 
 #endif // DIALOGCONNECTMICROCONTROLLER_H

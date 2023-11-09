@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QPushButton>
 
@@ -19,16 +20,21 @@ QT_BEGIN_NAMESPACE
 class Ui_DialogConnectMicrocontroller
 {
 public:
-    QPushButton *pushButton;
+    QPushButton *btn_search_microcontrollers;
+    QComboBox *cb_microcontrollers_names;
 
     void setupUi(QDialog *DialogConnectMicrocontroller)
     {
         if (DialogConnectMicrocontroller->objectName().isEmpty())
             DialogConnectMicrocontroller->setObjectName("DialogConnectMicrocontroller");
-        DialogConnectMicrocontroller->resize(400, 300);
-        pushButton = new QPushButton(DialogConnectMicrocontroller);
-        pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(80, 80, 80, 24));
+        DialogConnectMicrocontroller->resize(352, 165);
+        btn_search_microcontrollers = new QPushButton(DialogConnectMicrocontroller);
+        btn_search_microcontrollers->setObjectName("btn_search_microcontrollers");
+        btn_search_microcontrollers->setGeometry(QRect(100, 40, 171, 31));
+        cb_microcontrollers_names = new QComboBox(DialogConnectMicrocontroller);
+        cb_microcontrollers_names->addItem(QString());
+        cb_microcontrollers_names->setObjectName("cb_microcontrollers_names");
+        cb_microcontrollers_names->setGeometry(QRect(100, 90, 171, 24));
 
         retranslateUi(DialogConnectMicrocontroller);
 
@@ -38,7 +44,9 @@ public:
     void retranslateUi(QDialog *DialogConnectMicrocontroller)
     {
         DialogConnectMicrocontroller->setWindowTitle(QCoreApplication::translate("DialogConnectMicrocontroller", "Dialog", nullptr));
-        pushButton->setText(QCoreApplication::translate("DialogConnectMicrocontroller", "Conectar", nullptr));
+        btn_search_microcontrollers->setText(QCoreApplication::translate("DialogConnectMicrocontroller", "Buscar microcontroladores", nullptr));
+        cb_microcontrollers_names->setItemText(0, QCoreApplication::translate("DialogConnectMicrocontroller", "Buscar microcontroladores", nullptr));
+
     } // retranslateUi
 
 };

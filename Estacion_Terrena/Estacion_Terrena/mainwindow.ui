@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1129</width>
+    <width>1137</width>
     <height>484</height>
    </rect>
   </property>
@@ -214,7 +214,7 @@
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">background: rgb(170, 0, 3)</string>
+         <string notr="true">background-color: rgb(170, 0, 3);</string>
         </property>
         <property name="text">
          <string>DESCONECTADO</string>
@@ -567,7 +567,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1129</width>
+     <width>1137</width>
      <height>21</height>
     </rect>
    </property>

@@ -102,7 +102,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(1129, 484);
+        MainWindow->resize(1137, 484);
         actionValor_de_cuenta_regresiva = new QAction(MainWindow);
         actionValor_de_cuenta_regresiva->setObjectName("actionValor_de_cuenta_regresiva");
         actionConectar_microcontrolador = new QAction(MainWindow);
@@ -232,7 +232,7 @@ public:
         lbl_status->setMinimumSize(QSize(0, 75));
         lbl_status->setMaximumSize(QSize(16777215, 75));
         lbl_status->setFont(font1);
-        lbl_status->setStyleSheet(QString::fromUtf8("background: rgb(170, 0, 3)"));
+        lbl_status->setStyleSheet(QString::fromUtf8("background-color: rgb(170, 0, 3);"));
         lbl_status->setAlignment(Qt::AlignCenter);
 
         status_info_layaout->addWidget(lbl_status);
@@ -456,7 +456,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName("menuBar");
-        menuBar->setGeometry(QRect(0, 0, 1129, 21));
+        menuBar->setGeometry(QRect(0, 0, 1137, 21));
         menuAjustes = new QMenu(menuBar);
         menuAjustes->setObjectName("menuAjustes");
         menuConexi_n = new QMenu(menuBar);

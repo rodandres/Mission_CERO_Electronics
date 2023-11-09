@@ -24,6 +24,8 @@ public:
     //Public variables
     QSerialPort *micro_controller;
     QList<QString> micro_controller_names;
+    bool microcontroller_available;
+
 
 public slots:
     void serialRead();
@@ -34,8 +36,6 @@ private:
 
     quint16 vendor_id;
     quint16 product_id;
-
-    bool microcontroller_available;
 
     QByteArray serial_data;
     QString serial_buffer;

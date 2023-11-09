@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "serialmanagement.h"
 #include "dialogconnectmicrocontroller.h"
 
 QT_BEGIN_NAMESPACE
@@ -15,15 +16,18 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+signals:
+
 
 private slots:
-    void on_actionConectar_microcontrolador_triggered(bool checked);
-
     void on_actionConectar_microcontrolador_triggered();
-
-    void on_actionConectar_microcontrolador_toggled(bool arg1);
+    void changeConnectionStatus(bool status);
 
 private:
     Ui::MainWindow *ui;
+
+    SerialManagement *serial_obj;
+    DialogConnectMicrocontroller *dialog_connection;
+
 };
 #endif // MAINWINDOW_H

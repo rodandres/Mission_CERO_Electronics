@@ -22,6 +22,9 @@ set(PROJECT_SOURCES
         mainwindow.ui
         serialmanagement.cpp
         serialmanagement.h
+        dialogconnectmicrocontroller.cpp
+        dialogconnectmicrocontroller.h
+        dialogconnectmicrocontroller.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
