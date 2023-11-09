@@ -12,7 +12,9 @@
 #include <QtCore/QVariant>
 #include <QtGui/QAction>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QLCDNumber>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
@@ -29,13 +31,30 @@ QT_BEGIN_NAMESPACE
 class Ui_MainWindow
 {
 public:
+    QAction *actionValor_de_cuenta_regresiva;
+    QAction *actionConectar_microcontrolador;
+    QAction *actionDesconectar_controlador;
     QWidget *centralwidget;
     QHBoxLayout *horizontalLayout;
     QTabWidget *tabWidget;
     QWidget *tab_test;
     QPushButton *pushButton;
-    QWidget *tab_2;
-    QPushButton *pushButton_2;
+    QWidget *tab_launch;
+    QVBoxLayout *verticalLayout_3;
+    QHBoxLayout *mision_timer_layout;
+    QVBoxLayout *timer_layout;
+    QLabel *lbl_mision_timer;
+    QLCDNumber *lcd__mission_timer;
+    QVBoxLayout *mission_status_lauyout;
+    QLabel *lbl_mission_status;
+    QHBoxLayout *graphs_layout;
+    QGraphicsView *graphicsView;
+    QGraphicsView *graphicsView_2;
+    QGraphicsView *graphicsView_3;
+    QHBoxLayout *buttons_launch_layout;
+    QPushButton *btn_arm_servo;
+    QPushButton *btn_test_connection;
+    QPushButton *btn_calibrate_imu;
     QVBoxLayout *status_info_layaout;
     QLabel *lbl_status;
     QVBoxLayout *info_layout;
@@ -76,13 +95,22 @@ public:
     QSpacerItem *verticalSpacer;
     QMenuBar *menuBar;
     QMenu *menuAjustes;
+    QMenu *menuConexi_n;
+    QMenu *menuGuardado;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(815, 474);
+        MainWindow->resize(1129, 484);
+        actionValor_de_cuenta_regresiva = new QAction(MainWindow);
+        actionValor_de_cuenta_regresiva->setObjectName("actionValor_de_cuenta_regresiva");
+        actionConectar_microcontrolador = new QAction(MainWindow);
+        actionConectar_microcontrolador->setObjectName("actionConectar_microcontrolador");
+        actionConectar_microcontrolador->setCheckable(false);
+        actionDesconectar_controlador = new QAction(MainWindow);
+        actionDesconectar_controlador->setObjectName("actionDesconectar_controlador");
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         horizontalLayout = new QHBoxLayout(centralwidget);
@@ -101,12 +129,97 @@ public:
         pushButton->setObjectName("pushButton");
         pushButton->setGeometry(QRect(9, 132, 80, 24));
         tabWidget->addTab(tab_test, QString());
-        tab_2 = new QWidget();
-        tab_2->setObjectName("tab_2");
-        pushButton_2 = new QPushButton(tab_2);
-        pushButton_2->setObjectName("pushButton_2");
-        pushButton_2->setGeometry(QRect(9, 132, 80, 24));
-        tabWidget->addTab(tab_2, QString());
+        tab_launch = new QWidget();
+        tab_launch->setObjectName("tab_launch");
+        verticalLayout_3 = new QVBoxLayout(tab_launch);
+        verticalLayout_3->setSpacing(10);
+        verticalLayout_3->setObjectName("verticalLayout_3");
+        mision_timer_layout = new QHBoxLayout();
+        mision_timer_layout->setObjectName("mision_timer_layout");
+        mision_timer_layout->setSizeConstraint(QLayout::SetMinAndMaxSize);
+        timer_layout = new QVBoxLayout();
+        timer_layout->setObjectName("timer_layout");
+        lbl_mision_timer = new QLabel(tab_launch);
+        lbl_mision_timer->setObjectName("lbl_mision_timer");
+        lbl_mision_timer->setAlignment(Qt::AlignCenter);
+
+        timer_layout->addWidget(lbl_mision_timer);
+
+        lcd__mission_timer = new QLCDNumber(tab_launch);
+        lcd__mission_timer->setObjectName("lcd__mission_timer");
+        lcd__mission_timer->setMinimumSize(QSize(0, 80));
+        lcd__mission_timer->setMaximumSize(QSize(16777215, 80));
+        QFont font;
+        font.setBold(false);
+        lcd__mission_timer->setFont(font);
+        lcd__mission_timer->setStyleSheet(QString::fromUtf8(""));
+
+        timer_layout->addWidget(lcd__mission_timer);
+
+
+        mision_timer_layout->addLayout(timer_layout);
+
+        mission_status_lauyout = new QVBoxLayout();
+        mission_status_lauyout->setObjectName("mission_status_lauyout");
+        lbl_mission_status = new QLabel(tab_launch);
+        lbl_mission_status->setObjectName("lbl_mission_status");
+        QFont font1;
+        font1.setBold(true);
+        lbl_mission_status->setFont(font1);
+        lbl_mission_status->setStyleSheet(QString::fromUtf8(" font-size: 30px;"));
+        lbl_mission_status->setAlignment(Qt::AlignCenter);
+
+        mission_status_lauyout->addWidget(lbl_mission_status);
+
+
+        mision_timer_layout->addLayout(mission_status_lauyout);
+
+
+        verticalLayout_3->addLayout(mision_timer_layout);
+
+        graphs_layout = new QHBoxLayout();
+        graphs_layout->setSpacing(10);
+        graphs_layout->setObjectName("graphs_layout");
+        graphs_layout->setContentsMargins(10, 10, 10, 10);
+        graphicsView = new QGraphicsView(tab_launch);
+        graphicsView->setObjectName("graphicsView");
+
+        graphs_layout->addWidget(graphicsView);
+
+        graphicsView_2 = new QGraphicsView(tab_launch);
+        graphicsView_2->setObjectName("graphicsView_2");
+
+        graphs_layout->addWidget(graphicsView_2);
+
+        graphicsView_3 = new QGraphicsView(tab_launch);
+        graphicsView_3->setObjectName("graphicsView_3");
+
+        graphs_layout->addWidget(graphicsView_3);
+
+
+        verticalLayout_3->addLayout(graphs_layout);
+
+        buttons_launch_layout = new QHBoxLayout();
+        buttons_launch_layout->setObjectName("buttons_launch_layout");
+        btn_arm_servo = new QPushButton(tab_launch);
+        btn_arm_servo->setObjectName("btn_arm_servo");
+
+        buttons_launch_layout->addWidget(btn_arm_servo);
+
+        btn_test_connection = new QPushButton(tab_launch);
+        btn_test_connection->setObjectName("btn_test_connection");
+
+        buttons_launch_layout->addWidget(btn_test_connection);
+
+        btn_calibrate_imu = new QPushButton(tab_launch);
+        btn_calibrate_imu->setObjectName("btn_calibrate_imu");
+
+        buttons_launch_layout->addWidget(btn_calibrate_imu);
+
+
+        verticalLayout_3->addLayout(buttons_launch_layout);
+
+        tabWidget->addTab(tab_launch, QString());
 
         horizontalLayout->addWidget(tabWidget);
 
@@ -122,6 +235,8 @@ public:
         lbl_status->setSizePolicy(sizePolicy1);
         lbl_status->setMinimumSize(QSize(0, 75));
         lbl_status->setMaximumSize(QSize(16777215, 75));
+        lbl_status->setFont(font1);
+        lbl_status->setStyleSheet(QString::fromUtf8("background: rgb(170, 0, 3)"));
         lbl_status->setAlignment(Qt::AlignCenter);
 
         status_info_layaout->addWidget(lbl_status);
@@ -130,6 +245,7 @@ public:
         info_layout->setObjectName("info_layout");
         lbl_tittle_information = new QLabel(centralwidget);
         lbl_tittle_information->setObjectName("lbl_tittle_information");
+        lbl_tittle_information->setFont(font1);
         lbl_tittle_information->setAlignment(Qt::AlignCenter);
 
         info_layout->addWidget(lbl_tittle_information);
@@ -227,6 +343,7 @@ public:
 
         label_5 = new QLabel(centralwidget);
         label_5->setObjectName("label_5");
+        label_5->setFont(font1);
         label_5->setAlignment(Qt::AlignCenter);
 
         info_layout->addWidget(label_5);
@@ -343,15 +460,22 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName("menuBar");
-        menuBar->setGeometry(QRect(0, 0, 815, 21));
+        menuBar->setGeometry(QRect(0, 0, 1129, 21));
         menuAjustes = new QMenu(menuBar);
         menuAjustes->setObjectName("menuAjustes");
+        menuConexi_n = new QMenu(menuBar);
+        menuConexi_n->setObjectName("menuConexi_n");
+        menuGuardado = new QMenu(menuBar);
+        menuGuardado->setObjectName("menuGuardado");
         MainWindow->setMenuBar(menuBar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
         MainWindow->setStatusBar(statusbar);
 
         menuBar->addAction(menuAjustes->menuAction());
+        menuBar->addAction(menuConexi_n->menuAction());
+        menuBar->addAction(menuGuardado->menuAction());
+        menuAjustes->addAction(actionValor_de_cuenta_regresiva);
 
         retranslateUi(MainWindow);
 
@@ -364,11 +488,18 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
+        actionValor_de_cuenta_regresiva->setText(QCoreApplication::translate("MainWindow", "Valor de cuenta regresiva", nullptr));
+        actionConectar_microcontrolador->setText(QCoreApplication::translate("MainWindow", "Conectar microcontrolador", nullptr));
+        actionDesconectar_controlador->setText(QCoreApplication::translate("MainWindow", "Desconectar controlador", nullptr));
         pushButton->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_test), QCoreApplication::translate("MainWindow", "TEST", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(tab_2), QCoreApplication::translate("MainWindow", "LAUNCH", nullptr));
-        lbl_status->setText(QCoreApplication::translate("MainWindow", "ESTADO ESTACION TERRENA", nullptr));
+        lbl_mision_timer->setText(QCoreApplication::translate("MainWindow", "MISSION", nullptr));
+        lbl_mission_status->setText(QCoreApplication::translate("MainWindow", "Cohete no conectado", nullptr));
+        btn_arm_servo->setText(QCoreApplication::translate("MainWindow", "Armar servo", nullptr));
+        btn_test_connection->setText(QCoreApplication::translate("MainWindow", "Probar conexi\303\263n", nullptr));
+        btn_calibrate_imu->setText(QCoreApplication::translate("MainWindow", "Calibrar IMU", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab_launch), QCoreApplication::translate("MainWindow", "LAUNCH", nullptr));
+        lbl_status->setText(QCoreApplication::translate("MainWindow", "DESCONECTADO", nullptr));
         lbl_tittle_information->setText(QCoreApplication::translate("MainWindow", "INFORMACION", nullptr));
         label_6->setText(QCoreApplication::translate("MainWindow", "Computadora principal", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "Computadora secundaria", nullptr));
@@ -398,6 +529,8 @@ public:
         lbl_longitude_data->setText(QCoreApplication::translate("MainWindow", "NO DATA", nullptr));
         lbl_altitude_data->setText(QCoreApplication::translate("MainWindow", "NO DATA", nullptr));
         menuAjustes->setTitle(QCoreApplication::translate("MainWindow", "Ajustes", nullptr));
+        menuConexi_n->setTitle(QCoreApplication::translate("MainWindow", "Conexi\303\263n", nullptr));
+        menuGuardado->setTitle(QCoreApplication::translate("MainWindow", "Guardado", nullptr));
     } // retranslateUi
 
 };

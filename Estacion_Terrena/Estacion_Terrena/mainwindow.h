@@ -15,6 +15,13 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void on_actionConectar_microcontrolador_triggered(bool checked);
+
+    void on_actionConectar_microcontrolador_triggered();
+
+    void on_actionConectar_microcontrolador_toggled(bool arg1);
+
 private:
     Ui::MainWindow *ui;
 };

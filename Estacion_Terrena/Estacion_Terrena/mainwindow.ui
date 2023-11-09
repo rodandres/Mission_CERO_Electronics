@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>815</width>
-    <height>474</height>
+    <width>1129</width>
+    <height>484</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -47,23 +47,136 @@
         </property>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_2">
+      <widget class="QWidget" name="tab_launch">
        <attribute name="title">
         <string>LAUNCH</string>
        </attribute>
-       <widget class="QPushButton" name="pushButton_2">
-        <property name="geometry">
-         <rect>
-          <x>9</x>
-          <y>132</y>
-          <width>80</width>
-          <height>24</height>
-         </rect>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <property name="spacing">
+         <number>10</number>
         </property>
-        <property name="text">
-         <string>PushButton</string>
-        </property>
-       </widget>
+        <item>
+         <layout class="QHBoxLayout" name="mision_timer_layout">
+          <property name="sizeConstraint">
+           <enum>QLayout::SetMinAndMaxSize</enum>
+          </property>
+          <item>
+           <layout class="QVBoxLayout" name="timer_layout">
+            <item>
+             <widget class="QLabel" name="lbl_mision_timer">
+              <property name="text">
+               <string>MISSION</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLCDNumber" name="lcd__mission_timer">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>80</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>80</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true"/>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="mission_status_lauyout">
+            <item>
+             <widget class="QLabel" name="lbl_mission_status">
+              <property name="font">
+               <font>
+                <pointsize>-1</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true"> font-size: 30px;</string>
+              </property>
+              <property name="text">
+               <string>Cohete no conectado</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="graphs_layout">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <property name="leftMargin">
+           <number>10</number>
+          </property>
+          <property name="topMargin">
+           <number>10</number>
+          </property>
+          <property name="rightMargin">
+           <number>10</number>
+          </property>
+          <property name="bottomMargin">
+           <number>10</number>
+          </property>
+          <item>
+           <widget class="QGraphicsView" name="graphicsView"/>
+          </item>
+          <item>
+           <widget class="QGraphicsView" name="graphicsView_2"/>
+          </item>
+          <item>
+           <widget class="QGraphicsView" name="graphicsView_3"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="buttons_launch_layout">
+          <item>
+           <widget class="QPushButton" name="btn_arm_servo">
+            <property name="text">
+             <string>Armar servo</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btn_test_connection">
+            <property name="text">
+             <string>Probar conexión</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btn_calibrate_imu">
+            <property name="text">
+             <string>Calibrar IMU</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
       </widget>
      </widget>
     </item>
@@ -454,7 +567,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>815</width>
+     <width>1129</width>
      <height>21</height>
     </rect>
    </property>
@@ -462,10 +575,34 @@
     <property name="title">
      <string>Ajustes</string>
     </property>
+    <addaction name="actionValor_de_cuenta_regresiva"/>
+   </widget>
+   <widget class="QMenu" name="menuConexi_n">
+    <property name="title">
+     <string>Conexión</string>
+    </property>
+    <addaction name="actionConectar_microcontrolador"/>
+   </widget>
+   <widget class="QMenu" name="menuGuardado">
+    <property name="title">
+     <string>Guardado</string>
+    </property>
    </widget>
    <addaction name="menuAjustes"/>
+   <addaction name="menuConexi_n"/>
+   <addaction name="menuGuardado"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionValor_de_cuenta_regresiva">
+   <property name="text">
+    <string>Valor de cuenta regresiva</string>
+   </property>
+  </action>
+  <action name="actionConectar_microcontrolador">
+   <property name="text">
+    <string>Conectar microcontrolador</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
