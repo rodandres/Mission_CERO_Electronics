@@ -14,3 +14,11 @@ MainWindow::~MainWindow()
 }
 
 
+
+void MainWindow::on_actionConectar_microcontrolador_triggered()
+{
+    DialogConnectMicrocontroller a;
+    a.setModal(true);
+    a.exec();
+}
+

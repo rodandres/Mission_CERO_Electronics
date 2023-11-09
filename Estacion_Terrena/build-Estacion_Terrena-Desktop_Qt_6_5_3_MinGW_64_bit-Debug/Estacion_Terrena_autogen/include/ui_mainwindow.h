@@ -33,7 +33,6 @@ class Ui_MainWindow
 public:
     QAction *actionValor_de_cuenta_regresiva;
     QAction *actionConectar_microcontrolador;
-    QAction *actionDesconectar_controlador;
     QWidget *centralwidget;
     QHBoxLayout *horizontalLayout;
     QTabWidget *tabWidget;
@@ -108,9 +107,6 @@ public:
         actionValor_de_cuenta_regresiva->setObjectName("actionValor_de_cuenta_regresiva");
         actionConectar_microcontrolador = new QAction(MainWindow);
         actionConectar_microcontrolador->setObjectName("actionConectar_microcontrolador");
-        actionConectar_microcontrolador->setCheckable(false);
-        actionDesconectar_controlador = new QAction(MainWindow);
-        actionDesconectar_controlador->setObjectName("actionDesconectar_controlador");
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         horizontalLayout = new QHBoxLayout(centralwidget);
@@ -476,6 +472,7 @@ public:
         menuBar->addAction(menuConexi_n->menuAction());
         menuBar->addAction(menuGuardado->menuAction());
         menuAjustes->addAction(actionValor_de_cuenta_regresiva);
+        menuConexi_n->addAction(actionConectar_microcontrolador);
 
         retranslateUi(MainWindow);
 
@@ -490,7 +487,6 @@ public:
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         actionValor_de_cuenta_regresiva->setText(QCoreApplication::translate("MainWindow", "Valor de cuenta regresiva", nullptr));
         actionConectar_microcontrolador->setText(QCoreApplication::translate("MainWindow", "Conectar microcontrolador", nullptr));
-        actionDesconectar_controlador->setText(QCoreApplication::translate("MainWindow", "Desconectar controlador", nullptr));
         pushButton->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_test), QCoreApplication::translate("MainWindow", "TEST", nullptr));
         lbl_mision_timer->setText(QCoreApplication::translate("MainWindow", "MISSION", nullptr));

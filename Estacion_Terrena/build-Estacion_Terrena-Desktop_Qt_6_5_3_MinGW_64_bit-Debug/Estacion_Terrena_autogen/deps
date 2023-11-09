@@ -141,7 +141,9 @@ Estacion_Terrena_autogen/timestamp: \
 	C:/Qt/6.5.3/mingw_64/include/QtSerialPort/qserialportglobal.h \
 	C:/Qt/6.5.3/mingw_64/include/QtSerialPort/qserialportinfo.h \
 	C:/Qt/6.5.3/mingw_64/include/QtSerialPort/qtserialportexports.h \
+	C:/Qt/6.5.3/mingw_64/include/QtWidgets/QDialog \
 	C:/Qt/6.5.3/mingw_64/include/QtWidgets/QMainWindow \
+	C:/Qt/6.5.3/mingw_64/include/QtWidgets/qdialog.h \
 	C:/Qt/6.5.3/mingw_64/include/QtWidgets/qmainwindow.h \
 	C:/Qt/6.5.3/mingw_64/include/QtWidgets/qsizepolicy.h \
 	C:/Qt/6.5.3/mingw_64/include/QtWidgets/qtabwidget.h \
@@ -549,6 +551,8 @@ Estacion_Terrena_autogen/timestamp: \
 	C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/vadefs.h \
 	C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wchar.h \
 	D:/Mission_CERO_Electronics/Estacion_Terrena/Estacion_Terrena/CMakeLists.txt \
+	D:/Mission_CERO_Electronics/Estacion_Terrena/Estacion_Terrena/dialogconnectmicrocontroller.cpp \
+	D:/Mission_CERO_Electronics/Estacion_Terrena/Estacion_Terrena/dialogconnectmicrocontroller.h \
 	D:/Mission_CERO_Electronics/Estacion_Terrena/Estacion_Terrena/main.cpp \
 	D:/Mission_CERO_Electronics/Estacion_Terrena/Estacion_Terrena/mainwindow.cpp \
 	D:/Mission_CERO_Electronics/Estacion_Terrena/Estacion_Terrena/mainwindow.h \
@@ -559,5 +563,6 @@ Estacion_Terrena_autogen/timestamp: \
 	D:/Mission_CERO_Electronics/Estacion_Terrena/build-Estacion_Terrena-Desktop_Qt_6_5_3_MinGW_64_bit-Debug/CMakeFiles/3.24.2/CMakeRCCompiler.cmake \
 	D:/Mission_CERO_Electronics/Estacion_Terrena/build-Estacion_Terrena-Desktop_Qt_6_5_3_MinGW_64_bit-Debug/CMakeFiles/3.24.2/CMakeSystem.cmake \
 	D:/Mission_CERO_Electronics/Estacion_Terrena/build-Estacion_Terrena-Desktop_Qt_6_5_3_MinGW_64_bit-Debug/Estacion_Terrena_autogen/moc_predefs.h \
+	D:/Mission_CERO_Electronics/Estacion_Terrena/Estacion_Terrena/dialogconnectmicrocontroller.ui \
 	D:/Mission_CERO_Electronics/Estacion_Terrena/Estacion_Terrena/mainwindow.ui \
 	C:/Qt/Tools/CMake_64/bin/cmake.exe
