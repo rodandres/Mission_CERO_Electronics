@@ -33,6 +33,7 @@ class Ui_MainWindow
 public:
     QAction *actionValor_de_cuenta_regresiva;
     QAction *actionConectar_microcontrolador;
+    QAction *actionTerminar_conexi_n;
     QWidget *centralwidget;
     QHBoxLayout *horizontalLayout;
     QTabWidget *tabWidget;
@@ -107,6 +108,9 @@ public:
         actionValor_de_cuenta_regresiva->setObjectName("actionValor_de_cuenta_regresiva");
         actionConectar_microcontrolador = new QAction(MainWindow);
         actionConectar_microcontrolador->setObjectName("actionConectar_microcontrolador");
+        actionTerminar_conexi_n = new QAction(MainWindow);
+        actionTerminar_conexi_n->setObjectName("actionTerminar_conexi_n");
+        actionTerminar_conexi_n->setEnabled(false);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         horizontalLayout = new QHBoxLayout(centralwidget);
@@ -473,6 +477,7 @@ public:
         menuBar->addAction(menuGuardado->menuAction());
         menuAjustes->addAction(actionValor_de_cuenta_regresiva);
         menuConexi_n->addAction(actionConectar_microcontrolador);
+        menuConexi_n->addAction(actionTerminar_conexi_n);
 
         retranslateUi(MainWindow);
 
@@ -487,6 +492,7 @@ public:
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         actionValor_de_cuenta_regresiva->setText(QCoreApplication::translate("MainWindow", "Valor de cuenta regresiva", nullptr));
         actionConectar_microcontrolador->setText(QCoreApplication::translate("MainWindow", "Conectar microcontrolador", nullptr));
+        actionTerminar_conexi_n->setText(QCoreApplication::translate("MainWindow", "Terminar conexi\303\263n", nullptr));
         pushButton->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_test), QCoreApplication::translate("MainWindow", "TEST", nullptr));
         lbl_mision_timer->setText(QCoreApplication::translate("MainWindow", "MISSION", nullptr));

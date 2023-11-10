@@ -26,8 +26,7 @@ private slots:
 private:
     Ui::DialogConnectMicrocontroller *ui;
 
-signals:
-    void microcontrollerConnectionStatus(bool status);
+
 
 };
 

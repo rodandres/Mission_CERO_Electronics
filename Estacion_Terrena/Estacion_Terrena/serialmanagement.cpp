@@ -5,6 +5,7 @@ SerialManagement::SerialManagement(QObject *parent)
 {
     micro_controller = new QSerialPort(); //Incializa la variabñe serial puesta en el header
     microcontroller_available = false;
+    microcontroller_connected = false;
     serial_buffer = "";
 }
 
@@ -42,8 +43,6 @@ void SerialManagement::microcontrollerConecction(QString port_description)
     }
 }
 
-
-
 void SerialManagement::microcontrollerInit(QString port_description)    //Inicializa la conexion con el microcontrolador especificado por el usuario
 {
     micro_controller-> setPortName(port_name);
@@ -52,20 +51,27 @@ void SerialManagement::microcontrollerInit(QString port_description)    //Inicia
     micro_controller-> setParity(QSerialPort::NoParity);
     micro_controller-> setStopBits(QSerialPort::OneStop);
     micro_controller-> setFlowControl(QSerialPort::NoFlowControl);
+    micro_controller->setReadBufferSize(8192);
     micro_controller-> open(QIODevice::ReadWrite);
-
-    connect(micro_controller, SIGNAL(readyRead()),this,SLOT(serialRead())); //Conecta la señal de que llega un dato por el serial con el slot de leer el dato
 
     if (micro_controller->isOpen()){ //Si se pudo conectar con el microcontrolador, especifica el mensaje
         qDebug() << "Coneción con" << port_description<<" exitosa";
+        microcontroller_connected = true;
+
+        connect(micro_controller, SIGNAL(readyRead()),this,SLOT(serialRead())); //Conecta la señal de que llega un dato por el serial con el slot de leer el dato
+        emit microcontrollerConnectionStatus(microcontroller_connected);
+        qDebug() << "Tamaño del buffer" << micro_controller->readBufferSize();
+
     }else{
         qDebug() << "No se pudo conectar con " << port_description;
+        microcontroller_connected = false;
+        emit microcontrollerConnectionStatus(microcontroller_connected);
     }
 }
 
 void SerialManagement::serialRead()
 {
-    QString data;
+    /*QString data;
     QMap<QChar, QStringList> category_data_map;  // Usar un QMap para categorías
     const int LIMITE_DATOS_POR_CATEGORIA= 10;
 
@@ -112,13 +118,63 @@ void SerialManagement::serialRead()
     qDebug() << "Categoría A:" << category_data_map['A'];
         qDebug() << "Categoría B:" << category_data_map['B'];
         qDebug() << "Categoría C:" << category_data_map['C'];
+*/
+    const int LIMIT_DATA_PER_CATEGORY= 10;
 
+    if (!micro_controller->isReadable() || !microcontroller_connected) {
+        return; // Salir si el microcontrolador no está disponible o no se puede leer
+    }
 
+    // Leer datos del puerto serial
+    serial_data = micro_controller->readAll();
+
+    // Asegurarse de que los elementos se leen correctamente
+    serial_buffer += QString::fromStdString(serial_data.toStdString());
+
+    // Dividir la cadena en elementos utilizando ',' como separador
+    QStringList elements = serial_buffer.split(',', Qt::SkipEmptyParts);
+
+    // Procesar los elementos divididos
+    for (const QString &element : elements) {
+        if (element.isEmpty()) {
+            continue; // Saltar elementos vacíos
+        }
+
+        // Obtener la categoría y los datos
+        QChar category_identifier = element[0];
+        QString data = element.mid(1);
+
+        // Obtener la lista de datos de la categoría
+        QStringList &category_data_list = category_data_map[category_identifier];
+
+        // Verificar si la lista supera el límite de datos
+        if (category_data_list.size() >= LIMIT_DATA_PER_CATEGORY) {
+            category_data_list.pop_front(); // Eliminar el elemento más antiguo
+        }
+
+        // Usar el QMap para categorías
+        category_data_list.append(data);
+
+        qDebug() << "Categoria: " << category_identifier;
+        qDebug() << "Dato: " << data;
+
+        emit sendDataMainWindow(category_identifier, data);
+    }
+
+    // Imprimir las categorías al final del procesamiento
+        qDebug() << "Categoría A:" << category_data_map['A'];
+        qDebug() << "Categoría B:" << category_data_map['B'];
+        qDebug() << "Categoría C:" << category_data_map['C'];
+
+        serial_buffer.clear();
 }
 
 void SerialManagement::serialClose()   //Terminar conexión con el serial
 {
     micro_controller->close();
+    microcontroller_connected = false;
+    category_data_map.clear();
+    emit microcontrollerConnectionStatus(microcontroller_connected);
     qDebug() << "Conexión terminada";
 }
 
@@ -126,6 +182,8 @@ void SerialManagement::sendData(QString data) //Para enviar datos al arduino
 {
     if(micro_controller->isWritable()){  //Asegurarse que se puede escribir por el puerto seril
         micro_controller->write(data.toUtf8());  //Enviar el dato correctamente
+        qDebug()<<"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+
     }else{
         qDebug()<<"No se pueden enviar los datos";
     }

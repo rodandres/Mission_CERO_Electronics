@@ -25,6 +25,7 @@ public:
     QSerialPort *micro_controller;
     QList<QString> micro_controller_names;
     bool microcontroller_available;
+    bool microcontroller_connected;
 
 
 public slots:
@@ -40,6 +41,12 @@ private:
     QByteArray serial_data;
     QString serial_buffer;
 
+    QMap<QChar, QStringList> category_data_map;
+
+
+signals:
+    void microcontrollerConnectionStatus(bool status);
+    void sendDataMainWindow(QChar categoty_identifier, QString data);
 };
 
 #endif // SERIALMANAGEMENT_H

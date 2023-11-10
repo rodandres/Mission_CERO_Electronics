@@ -582,6 +582,7 @@
      <string>Conexión</string>
     </property>
     <addaction name="actionConectar_microcontrolador"/>
+    <addaction name="actionTerminar_conexi_n"/>
    </widget>
    <widget class="QMenu" name="menuGuardado">
     <property name="title">
@@ -601,6 +602,14 @@
   <action name="actionConectar_microcontrolador">
    <property name="text">
     <string>Conectar microcontrolador</string>
+   </property>
+  </action>
+  <action name="actionTerminar_conexi_n">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Terminar conexión</string>
    </property>
   </action>
  </widget>
