@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
+#include "graphs.h"
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -16,7 +17,18 @@ MainWindow::MainWindow(QWidget *parent)
     connect(serial_obj, &SerialManagement::microcontrollerConnectionStatus, this, &MainWindow::changeConnectionStatus);
     connect(serial_obj, &SerialManagement::sendDataMainWindow, this, &MainWindow::readDataProcessed);
 
+    Graphs *Graphs1 = new Graphs(this);
+    Graphs *Graphs2 = new Graphs(this);
+    Graphs *Graphs3 = new Graphs(this);
 
+    Graphs1->setName("Grafica 1");
+    Graphs2->setName("Grafica 2");
+    Graphs3->setName("Grafica 3");
+
+    // Adding graphview to ui
+    ui->graphsView1->layout()->addWidget(Graphs1->chartView);
+    ui->graphsView2->layout()->addWidget(Graphs2->chartView);
+    ui->graphsView3->layout()->addWidget(Graphs3->chartView);
 }
 
 MainWindow::~MainWindow()

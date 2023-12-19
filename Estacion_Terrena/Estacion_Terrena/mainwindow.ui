@@ -141,13 +141,13 @@
            <number>10</number>
           </property>
           <item>
-           <widget class="QGraphicsView" name="graphicsView"/>
+           <layout class="QGridLayout" name="graphsView3"/>
           </item>
           <item>
-           <widget class="QGraphicsView" name="graphicsView_2"/>
+           <layout class="QGridLayout" name="graphsView1"/>
           </item>
           <item>
-           <widget class="QGraphicsView" name="graphicsView_3"/>
+           <layout class="QGridLayout" name="graphsView2"/>
           </item>
          </layout>
         </item>

@@ -12,7 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtGui/QAction>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QGraphicsView>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLCDNumber>
 #include <QtWidgets/QLabel>
@@ -48,9 +48,9 @@ public:
     QVBoxLayout *mission_status_lauyout;
     QLabel *lbl_mission_status;
     QHBoxLayout *graphs_layout;
-    QGraphicsView *graphicsView;
-    QGraphicsView *graphicsView_2;
-    QGraphicsView *graphicsView_3;
+    QGridLayout *graphsView3;
+    QGridLayout *graphsView1;
+    QGridLayout *graphsView2;
     QHBoxLayout *buttons_launch_layout;
     QPushButton *btn_arm_servo;
     QPushButton *btn_test_connection;
@@ -181,20 +181,20 @@ public:
         graphs_layout->setSpacing(10);
         graphs_layout->setObjectName("graphs_layout");
         graphs_layout->setContentsMargins(10, 10, 10, 10);
-        graphicsView = new QGraphicsView(tab_launch);
-        graphicsView->setObjectName("graphicsView");
+        graphsView3 = new QGridLayout();
+        graphsView3->setObjectName("graphsView3");
 
-        graphs_layout->addWidget(graphicsView);
+        graphs_layout->addLayout(graphsView3);
 
-        graphicsView_2 = new QGraphicsView(tab_launch);
-        graphicsView_2->setObjectName("graphicsView_2");
+        graphsView1 = new QGridLayout();
+        graphsView1->setObjectName("graphsView1");
 
-        graphs_layout->addWidget(graphicsView_2);
+        graphs_layout->addLayout(graphsView1);
 
-        graphicsView_3 = new QGraphicsView(tab_launch);
-        graphicsView_3->setObjectName("graphicsView_3");
+        graphsView2 = new QGridLayout();
+        graphsView2->setObjectName("graphsView2");
 
-        graphs_layout->addWidget(graphicsView_3);
+        graphs_layout->addLayout(graphsView2);
 
 
         verticalLayout_3->addLayout(graphs_layout);
