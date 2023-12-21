@@ -36,6 +36,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         serialmanagement.h serialmanagement.cpp
         dialogconnectmicrocontroller.h dialogconnectmicrocontroller.cpp dialogconnectmicrocontroller.ui
         graphs.h graphs.cpp
+        datamanagement.h datamanagement.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET Estacion_Terrena APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

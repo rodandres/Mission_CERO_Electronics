@@ -509,6 +509,7 @@ Estacion_Terrena_autogen/timestamp: \
 	C:/Qt/6.5.3/mingw_64/include/QtSerialPort/qtserialportexports.h \
 	C:/Qt/6.5.3/mingw_64/include/QtWidgets/QCommonStyle \
 	C:/Qt/6.5.3/mingw_64/include/QtWidgets/QDialog \
+	C:/Qt/6.5.3/mingw_64/include/QtWidgets/QFileDialog \
 	C:/Qt/6.5.3/mingw_64/include/QtWidgets/QGraphicsView \
 	C:/Qt/6.5.3/mingw_64/include/QtWidgets/QGraphicsWidget \
 	C:/Qt/6.5.3/mingw_64/include/QtWidgets/QLayout \
@@ -1324,6 +1325,8 @@ Estacion_Terrena_autogen/timestamp: \
 	C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wtypes.h \
 	C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wtypesbase.h \
 	D:/Mission_CERO_Electronics/Estacion_Terrena/Estacion_Terrena/CMakeLists.txt \
+	D:/Mission_CERO_Electronics/Estacion_Terrena/Estacion_Terrena/datamanagement.cpp \
+	D:/Mission_CERO_Electronics/Estacion_Terrena/Estacion_Terrena/datamanagement.h \
 	D:/Mission_CERO_Electronics/Estacion_Terrena/Estacion_Terrena/dialogconnectmicrocontroller.cpp \
 	D:/Mission_CERO_Electronics/Estacion_Terrena/Estacion_Terrena/dialogconnectmicrocontroller.h \
 	D:/Mission_CERO_Electronics/Estacion_Terrena/Estacion_Terrena/graphs.cpp \

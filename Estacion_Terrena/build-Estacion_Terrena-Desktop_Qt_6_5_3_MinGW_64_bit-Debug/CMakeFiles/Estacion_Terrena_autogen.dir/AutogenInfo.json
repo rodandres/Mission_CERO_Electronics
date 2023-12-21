@@ -389,6 +389,12 @@
 	"HEADERS" : 
 	[
 		[
+			"D:/Mission_CERO_Electronics/Estacion_Terrena/Estacion_Terrena/datamanagement.h",
+			"MU",
+			"EWIEGA46WW/moc_datamanagement.cpp",
+			null
+		],
+		[
 			"D:/Mission_CERO_Electronics/Estacion_Terrena/Estacion_Terrena/dialogconnectmicrocontroller.h",
 			"MU",
 			"EWIEGA46WW/moc_dialogconnectmicrocontroller.cpp",
@@ -490,6 +496,11 @@
 	"SETTINGS_FILE" : "D:/Mission_CERO_Electronics/Estacion_Terrena/build-Estacion_Terrena-Desktop_Qt_6_5_3_MinGW_64_bit-Debug/CMakeFiles/Estacion_Terrena_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[
+			"D:/Mission_CERO_Electronics/Estacion_Terrena/Estacion_Terrena/datamanagement.cpp",
+			"MU",
+			null
+		],
 		[
 			"D:/Mission_CERO_Electronics/Estacion_Terrena/Estacion_Terrena/dialogconnectmicrocontroller.cpp",
 			"MU",
